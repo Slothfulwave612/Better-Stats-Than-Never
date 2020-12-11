@@ -38,9 +38,6 @@
   
 
   
-  
-
-  
 
   
   
@@ -51,13 +48,18 @@
   
 
   
+
+  
+  
+
+  
   
 
   
   
 
   
-      ,"page9": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://slothfulwave612.github.io/Better-Stats-Than-Never/robots.txt",
