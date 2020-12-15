@@ -1,12 +1,10 @@
 ---
 layout: page
-title: 
+title: About
 permalink: /about/
 ---
 
 ![stats_logo](https://user-images.githubusercontent.com/33928040/102067816-a64f7480-3e21-11eb-820d-d1dcbf875a4b.jpg)
-
-# About
 
 Hello everyone, this is Anmol Durgapal (*@slothfulwave612*). I have started this blog to share my notes on statistics. As I was revising the topic, I thought of making my notes open to everyone so that it becomes easy for everyone to learn and play around with statistics.
 
