@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tutorial 01: Getting Started With Statistics | Better Stats Than Never</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tutorial 01: Getting Started With Statistics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An intuitive introduction to statistics" />
+<meta property="og:description" content="An intuitive introduction to statistics" />
+<link rel="canonical" href="https://slothfulwave612.github.io/Better-Stats-Than-Never/jupyter/basic-stats/2020/12/12/Introduction-To-Statistics.html" />
+<meta property="og:url" content="https://slothfulwave612.github.io/Better-Stats-Than-Never/jupyter/basic-stats/2020/12/12/Introduction-To-Statistics.html" />
+<meta property="og:site_name" content="Better Stats Than Never" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-12T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://slothfulwave612.github.io/Better-Stats-Than-Never/jupyter/basic-stats/2020/12/12/Introduction-To-Statistics.html","@type":"BlogPosting","headline":"Tutorial 01: Getting Started With Statistics","dateModified":"2020-12-12T00:00:00-06:00","datePublished":"2020-12-12T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://slothfulwave612.github.io/Better-Stats-Than-Never/jupyter/basic-stats/2020/12/12/Introduction-To-Statistics.html"},"description":"An intuitive introduction to statistics","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Better-Stats-Than-Never/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://slothfulwave612.github.io/Better-Stats-Than-Never/feed.xml" title="Better Stats Than Never" /><link rel="shortcut icon" type="image/x-icon" href="/Better-Stats-Than-Never/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Better-Stats-Than-Never/">Better Stats Than Never</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Better-Stats-Than-Never/about/">About</a><a class="page-link" href="/Better-Stats-Than-Never/search/">Search</a><a class="page-link" href="/Better-Stats-Than-Never/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tutorial 01: Getting Started With Statistics</h1><p class="page-description">An intuitive introduction to statistics</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-12T00:00:00-06:00" itemprop="datePublished">
+        Dec 12, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Better-Stats-Than-Never/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/Better-Stats-Than-Never/categories/#basic-stats">basic-stats</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/Slothfulwave612/Better-Stats-Than-Never/tree/master/_notebooks/2020-12-12-Introduction-To-Statistics.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Better-Stats-Than-Never/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/Slothfulwave612/Better-Stats-Than-Never/master?filepath=_notebooks%2F2020-12-12-Introduction-To-Statistics.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Better-Stats-Than-Never/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/Slothfulwave612/Better-Stats-Than-Never/blob/master/_notebooks/2020-12-12-Introduction-To-Statistics.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Better-Stats-Than-Never/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Overview">Overview </a></li>
+<li class="toc-entry toc-h1"><a href="#What-is-Statistics?">What is Statistics? </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Defining-The-Term">Defining The Term </a></li>
+<li class="toc-entry toc-h2"><a href="#Statistical-&-Non-statistical-Questions">Statistical &amp; Non-statistical Questions </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Where-Do-We-Use-Statistics?">Where Do We Use Statistics? </a></li>
+<li class="toc-entry toc-h1"><a href="#How-Is-Statistics-Useful?">How Is Statistics Useful? </a></li>
+<li class="toc-entry toc-h1"><a href="#Questionnaire">Questionnaire </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-12-12-Introduction-To-Statistics.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Overview">
+<a class="anchor" href="#Overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview<a class="anchor-link" href="#Overview"> </a>
+</h1>
+<ul>
+<li>
+<p>Statistics is often hailed as one of the most useful areas of mathematics.</p>
+</li>
+<li>
+<p>It helps us to make educated guesses of the unknown, and find useful information in an ocean of data. But despite its usefulness, many people struggle with statistics: What is it? How does it work? Is it useful?</p>
+</li>
+<li>
+<p>For many statistics feels like an unending collection of rules and formulae. If its misapplied, statistics can lead to false conclusions, causing people to develop mistrust in the subject.</p>
+</li>
+<li>
+<p>In this tutorial we will get to know <em>What statistic is?</em> <em>Why do we need it?</em>, and <em>How can it be useful?</em></p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="What-is-Statistics?">
+<a class="anchor" href="#What-is-Statistics?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Statistics?<a class="anchor-link" href="#What-is-Statistics?"> </a>
+</h1>
+<h2 id="Defining-The-Term">
+<a class="anchor" href="#Defining-The-Term" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining The Term<a class="anchor-link" href="#Defining-The-Term"> </a>
+</h2>
+<blockquote>
+<p>Statistics is the science of <em>collecting</em>, <em>organising</em>, <em>analysing</em>, <em>interpreting</em> and <em>presenting</em> data.</p>
+</blockquote>
+<ul>
+<li>
+<p>Let's now break down the definition to understand its meaning.</p>
+<ul>
+<li>The most important thing is:it's all about <strong>data</strong>. Without data, statistics can not exist.</li>
+<li>
+<p>So the first step is to <strong>collect</strong> data. There are a lot of ways to collect data like conducting a survey or performing experiments and recording the obtained data.</p>
+</li>
+<li>
+<p>Once we have the data, the next step is to <strong>organise</strong> it, i.e. putting the data in some structured order like in a table.</p>
+</li>
+<li>
+<p>Now we have our data in an organised format, we then <strong>analyse</strong> it. Here we perform techniques like mean, median, mode or other advance techniques to get a sense of what the data is all about.</p>
+</li>
+<li>
+<p>Once we have the data analysed, we then <strong>interpret</strong> the data, i.e. what does the data tell us, and one very intuitive way to interpret the data is by visualizing it, where we <strong>present</strong> the data using some graphs or charts.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>So, in layman's term <em>statistics</em> is the science of learning from data.</p>
+</li>
+</ul>
+<h2 id="Statistical-&amp;-Non-statistical-Questions">
+<a class="anchor" href="#Statistical-&amp;-Non-statistical-Questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Statistical &amp; Non-statistical Questions<a class="anchor-link" href="#Statistical-&amp;-Non-statistical-Questions"> </a>
+</h2>
+<ul>
+<li>
+<p>In layman's term, the questions where we need statistics to conclude something are known as <em>statistical questions</em> and the questions where we don't need statistics to conclude something are known as <em>non-statistical questions</em></p>
+</li>
+<li>
+<p>Lets first look at some examples, and then we will form a general definition.</p>
+<ul>
+<li>
+<p>Example 01: How old are you?</p>
+<ul>
+<li>
+<p>Here, we are talking about how old is a particular person. We don't need any tools of statistics here to answer this question.</p>
+</li>
+<li>
+<p>So this is a <em>non-statistical question</em>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Example 02: How old are the people who have watched a particular YouTube video in 2020?</p>
+<ul>
+<li>
+<p>Here, we are assuming that multiple people will have watched the video in 2020, and they are not going to be of the same age. There is going to be variability in their age. One can be of 10 years old others might be 20 and so on.</p>
+</li>
+<li>
+<p>What answer do we give here? Here we want to get a sense of in general, how old are the people? So, this is where the statistics might be valuable. We want to find here, let say an average age for this.</p>
+</li>
+<li>
+<p>So this is a <em>statistical question</em>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Example 03: Do wolves weigh more than dogs?</p>
+<ul>
+<li>
+<p>So once again here is variability in the weights of dogs and wolves. Some dogs are light, and some are heavy, same goes for wolves as well.</p>
+</li>
+<li>
+<p>Since we have variability in each of the categories, we might want to use statistics to answer this given question like finding an average and then comparing average to get an answer.</p>
+</li>
+<li>
+<p>So, this is a <em>statistical question</em>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Example 04: What was the difference in rainfall between Singapore and Seattle in 2020?</p>
+<ul>
+<li>
+<p>Now, these two numbers are known and can be measured. The rainfall in Singapore can be measured, as well as in Seattle, and then we can find the difference.</p>
+</li>
+<li>
+<p>So, we don't need statistics here hence it's a <em>non-statistical question</em>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Here is a pattern, in <em>non-statistical questions</em> we are asking about a particular individual. There is only one answer here, due to which there is <em>no variability</em> in the answer.</p>
+</li>
+<li>
+<p>In <em>statistical questions</em> we are asking about a bunch of individuals, and there is a <em>variability</em> in the answer. So, we need statistics here to come up with some features of the data set to be able to make some conclusions.</p>
+</li>
+</ul>
+<blockquote>
+<p>The <strong>statistical question</strong> is one that can be answered by collecting data and where there will be variability in that data.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Where-Do-We-Use-Statistics?">
+<a class="anchor" href="#Where-Do-We-Use-Statistics?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where Do We Use Statistics?<a class="anchor-link" href="#Where-Do-We-Use-Statistics?"> </a>
+</h1>
+<ul>
+<li>Let's start by seeing where statistics are involved in our everyday life, and then we will see how statistics plays a significant role in many different fields.</li>
+</ul>
+<ul>
+<li>One familiar example we have here is how we manage our yearly or monthly budget. We go through how much money did we spent last year, what was the average money we spent, in which area we were spending the most, how much money did we saved? So all these questions come to our mind. It is only because of statistics and data we test out different things to save a little bit more money.</li>
+</ul>
+<ul>
+<li>Other examples in our daily lives can be: <ul>
+<li>We can use statistics to see how are we performing in our exams.</li>
+<li>It can help us see are we living a healthy life or not (by looking at what are we eating, how much are we exercising, what is our junk-food intake)</li>
+<li>We use statistics when we look at the weather forecast and decide what to wear.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Other areas in which uses statistics heavily are:<ul>
+<li>Netflix uses it to predict what show we might want to watch next.</li>
+<li>Amazon uses it to recommend different products.</li>
+<li>Government use it to decide whether or not to invest more in child education or on any other sector.</li>
+<li>Statistics plays a very significant role in all the medical studies (from drug creation to cancer treatment).</li>
+<li>Stock market uses a statistical technique for stock analysis.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>So, in some way or other statistics play a very vital role in our lives, from solving our family budget problem to diagnosis and treatment of deadly diseases to helping businesses in increasing their profits. It helps us to understand the world a little bit better through numbers and other quantitive information.
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>Statistics is the building block for Data Science. It is a necessary skill that any data scientist or analyst should have. Data scientists and analysts use statistics to find meaningful trends in the data, and it is only possible if one knows statistics and how to use it.
+</div>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="How-Is-Statistics-Useful?">
+<a class="anchor" href="#How-Is-Statistics-Useful?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How Is Statistics Useful?<a class="anchor-link" href="#How-Is-Statistics-Useful?"> </a>
+</h1>
+<ul>
+<li>
+<p>We are living in a world full of data, and its amount is progressively increasing day by day. Some form of data is present in almost every field and to understand the meaning behind the data, you need statistics.</p>
+</li>
+<li>
+<p>Statistical knowledge helps you use the proper methods to collect the data, employ correct analysis, and effectively present the results.</p>
+</li>
+<li>
+<p>It is a crucial process behind how we make discoveries, make decisions based on the data and make predictions.</p>
+</li>
+<li>
+<p>And allows us to understand a subject(be it medical science or sports) much more deeply.</p>
+</li>
+<li>
+<p>So to conclude no matter what field we are in our work will be involved with data in some form or the other, and it is good to know statistics which will help us to understand the problem a little bit better.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Questionnaire">
+<a class="anchor" href="#Questionnaire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questionnaire<a class="anchor-link" href="#Questionnaire"> </a>
+</h1>
+<ol>
+<li>Classify the following questions into statistical and non-statistical question. Also, explain the reason.<ol>
+<li>Do dogs run faster than cats?</li>
+<li>Does your dog weigh more than that wolf?</li>
+<li>Does it rain more in Seattle than Singapore?</li>
+<li>In general, will I use less gas driving at 40 kmph than 50 kmph?</li>
+<li>Do English professors get paid less than math professors?</li>
+<li>Does the most highly paid English professor at Harvard get paid more than the most highly paid math professor at MIT?</li>
+</ol>
+</li>
+</ol>
+<ol>
+<li>Data representing the heights of the students in a mathematics class is specified. Write down a statistical question you can answer using the data provided.</li>
+</ol>
+<ol>
+<li>Can you think of any other way(other than the listed examples in the above notes) you can use statistics in your daily life?</li>
+</ol>
+<ol>
+<li>Your college football(or any sport you want) coach wants his team to perform better in the upcoming tournament and ask for your help. Is there any way you can use statistics to help him out(given that you have data on the team's past performances)? If yes, then how?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="footnotes"><p id="fn-1">1. All these notes are either compiled from YouTube/Google or are my ideas.<a href="#fnref-1" class="footnote footnotes">↩</a></p></div>
+<div class="footnotes"><p id="fn-2">2. If you face any problem or have any feedback/suggestions feel free to comment.<a href="#fnref-2" class="footnote footnotes">↩</a></p></div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Slothfulwave612/Better-Stats-Than-Never"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Better-Stats-Than-Never/jupyter/basic-stats/2020/12/12/Introduction-To-Statistics.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Better-Stats-Than-Never/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Better-Stats-Than-Never/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Better-Stats-Than-Never/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An intuitive and easy way for getting started in statistics.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/slothfulwave612" title="slothfulwave612"><svg class="svg-icon grey"><use xlink:href="/Better-Stats-Than-Never/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/slothfulwave612" title="slothfulwave612"><svg class="svg-icon grey"><use xlink:href="/Better-Stats-Than-Never/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
