@@ -20,6 +20,22 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Better-Stats-Than-Never/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://slothfulwave612.github.io/Better-Stats-Than-Never/feed.xml" title="Better Stats Than Never" /><link rel="shortcut icon" type="image/x-icon" href="/Better-Stats-Than-Never/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
 
 <script>
 function wrap_img(fn) {
@@ -142,7 +158,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Defining-The-Terms">Defining The Terms </a></li>
 <li class="toc-entry toc-h2"><a href="#Example">Example </a></li>
-<li class="toc-entry toc-h2"><a href="#Notation">Notation </a></li>
+<li class="toc-entry toc-h2"><a href="#Notations">Notations </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Questionnaire">Questionnaire </a></li>
@@ -670,9 +686,9 @@ window.onload = wrap_img;
 <li>For example, every ten years, the Indian government aims to count every person living in the country using the Indian Census. This data is used in many ways. But it is always difficult to collect data from the whole population. Because of non-responses, the population count is incomplete, and the data can be biased towards some groups.</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>In cases like this, sampling can be used to make more precise inferences about the population.</li>
+<li>
+<p>In cases like this, sampling can be used to make more precise inferences about the population.</p>
+</li>
 </ul>
 
 </div>
@@ -707,9 +723,9 @@ window.onload = wrap_img;
 <li>We want to study political attitudes in young people. Our population is the 300,000 undergraduate students in India. Because it’s not practical to collect data from all of them, we use a sample of 1000 undergraduate volunteers from three Indian universities – this is the group who will complete our online survey.</li>
 </ul>
 </li>
-</ul>
-<ul>
-<li>Ideally, a sample should be randomly selected and representative of the population.</li>
+<li>
+<p>Ideally, a sample should be randomly selected and representative of the population.</p>
+</li>
 </ul>
 <h2 id="Reasons-for-sampling">
 <a class="anchor" href="#Reasons-for-sampling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reasons for sampling<a class="anchor-link" href="#Reasons-for-sampling"> </a>
@@ -766,8 +782,8 @@ window.onload = wrap_img;
 <p>We can use this statistic, the sample mean of 3.2, to make a scientific guess about the population parameter – that is, to infer the mean political attitude rating of all undergraduate students in India.</p>
 </li>
 </ul>
-<h2 id="Notation">
-<a class="anchor" href="#Notation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notation<a class="anchor-link" href="#Notation"> </a>
+<h2 id="Notations">
+<a class="anchor" href="#Notations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notations<a class="anchor-link" href="#Notations"> </a>
 </h2>
 <ul>
 <li>
