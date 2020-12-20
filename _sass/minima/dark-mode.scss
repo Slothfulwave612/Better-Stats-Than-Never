@@ -25,7 +25,7 @@ a:hover {
 
 .site-nav {
     background-color: $dark-grey;
-    border-color: $dark-grey;
+    border-color: $overlay-light;
 }
 
 * {
@@ -39,7 +39,7 @@ pre, code {
 }
 
 .page-description {
-    color: $med-emph;
+    color: $dark-grey;
 }
 
 .post-meta {
