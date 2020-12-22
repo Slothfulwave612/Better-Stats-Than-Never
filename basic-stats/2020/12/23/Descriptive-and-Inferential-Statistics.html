@@ -179,55 +179,7 @@ window.onload = wrap_img;
 <span class="c1">## default fontstyle</span>
 <span class="n">rcParams</span><span class="p">[</span><span class="s2">"font.family"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Ubuntu"</span>
 
-<span class="c1">## format output</span>
-<span class="n">CSS</span> <span class="o">=</span> <span class="s2">"""</span>
-<span class="s2">.output {</span>
-<span class="s2">  margin-left:20px;</span>
-<span class="s2">}</span>
-<span class="s2">"""</span>
-<span class="n">display</span><span class="p">(</span>
-   <span class="n">HTML</span><span class="p">(</span><span class="s2">"&lt;style&gt;</span><span class="si">{}</span><span class="s2">&lt;/style&gt;"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CSS</span><span class="p">))</span> 
-<span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-    </details>
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-<style>
-.output {
-  margin-left:20px;
-}
-</style>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<details class="description">
-      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
-        <p></p>
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_patch</span><span class="p">(</span><span class="n">verts</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_patch</span><span class="p">(</span><span class="n">verts</span><span class="p">):</span>
     <span class="n">codes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">MOVETO</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">CURVE4</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">verts</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">verts</span><span class="p">,</span> <span class="n">codes</span><span class="p">)</span>
     <span class="n">patch</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">PathPatch</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">"#F2F2F2"</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
@@ -576,7 +528,6 @@ window.onload = wrap_img;
 <p>  1.2. A bar graph of areas of study of all the currenlty enrolled MIT students is produced.</p>
 <p>  1.3. A professor determines the average course grade for the students in a particular course.</p>
 <p>  1.4. Recycling habits of 100 Klamath Falls households are observed to determine recyclying capacity needed for the city.</p>
-<p><br></p>
 <p><strong>Ques 02.</strong> Summarize the concepts of descriptive and inferential statistics.</p>
 
 </div>
@@ -585,10 +536,11 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p></p>
+<div class="footnotes"><p id="fn-1">1. <a href="https://slothfulwave612.github.io/Better-Stats-Than-Never/solutions/2020/12/23/Exercise-Solutions.html#Tutorial-03:-Descriptive-and-Inferential-Statistics">Solutions</a><a href="#fnref-1" class="footnote footnotes">↩</a></p></div>
 <div class="footnotes">
-<p id="fn-1">1. Notes are compiled from <a href="https://statisticsbyjim.com/basics/descriptive-inferential-statistics">Statistics By Jim</a>, <a href="https://www.geeksforgeeks.org/introduction-of-statistics-and-its-types">GeeksforGeeks</a>, <a href="https://conjointly.com/kb/descriptive-statistics/">Research Methods Knowledge Base</a>, <a href="https://statistics.laerd.com/statistical-guides/descriptive-inferential-statistics.php">Laerd Statistics</a>, <a href="https://www.youtube.com/watch?v=20NpnXa4UlI&amp;list=PLU-eC0V9e-DtBg5kUwGtlFfmd0H-hUN-i&amp;index=1&amp;t=132s">h2omang</a><a href="#fnref-1" class="footnote footnotes">↩</a>&lt;/p&gt;&lt;/div&gt;
+<p id="fn-2">2. Notes are compiled from <a href="https://statisticsbyjim.com/basics/descriptive-inferential-statistics">Statistics By Jim</a>, <a href="https://www.geeksforgeeks.org/introduction-of-statistics-and-its-types">GeeksforGeeks</a>, <a href="https://conjointly.com/kb/descriptive-statistics/">Research Methods Knowledge Base</a>, <a href="https://statistics.laerd.com/statistical-guides/descriptive-inferential-statistics.php">Laerd Statistics</a>, <a href="https://www.youtube.com/watch?v=20NpnXa4UlI&amp;list=PLU-eC0V9e-DtBg5kUwGtlFfmd0H-hUN-i&amp;index=1&amp;t=132s">h2omang</a><a href="#fnref-2" class="footnote footnotes">↩</a>&lt;/p&gt;&lt;/div&gt;
 </p>
-<div class="footnotes"><p id="fn-2">2. If you face any problem or have any feedback/suggestions feel free to comment.<a href="#fnref-2" class="footnote footnotes">↩</a></p></div>&lt;/p&gt;
+<div class="footnotes"><p id="fn-3">3. If you face any problem or have any feedback/suggestions feel free to comment.<a href="#fnref-3" class="footnote footnotes">↩</a></p></div>&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
