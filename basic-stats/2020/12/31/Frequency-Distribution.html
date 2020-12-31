@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tutorial 05: Frequency Distribution | Better Stats Than Never</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tutorial 05: Frequency Distribution" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="First part of Charts and Graphs" />
+<meta property="og:description" content="First part of Charts and Graphs" />
+<link rel="canonical" href="https://slothfulwave612.github.io/Better-Stats-Than-Never/basic-stats/2020/12/31/Frequency-Distribution.html" />
+<meta property="og:url" content="https://slothfulwave612.github.io/Better-Stats-Than-Never/basic-stats/2020/12/31/Frequency-Distribution.html" />
+<meta property="og:site_name" content="Better Stats Than Never" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-31T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://slothfulwave612.github.io/Better-Stats-Than-Never/basic-stats/2020/12/31/Frequency-Distribution.html","@type":"BlogPosting","headline":"Tutorial 05: Frequency Distribution","dateModified":"2020-12-31T00:00:00-06:00","datePublished":"2020-12-31T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://slothfulwave612.github.io/Better-Stats-Than-Never/basic-stats/2020/12/31/Frequency-Distribution.html"},"description":"First part of Charts and Graphs","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Better-Stats-Than-Never/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://slothfulwave612.github.io/Better-Stats-Than-Never/feed.xml" title="Better Stats Than Never" /><link rel="shortcut icon" type="image/x-icon" href="/Better-Stats-Than-Never/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Better-Stats-Than-Never/">Better Stats Than Never</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Better-Stats-Than-Never/about/">About</a><a class="page-link" href="/Better-Stats-Than-Never/search/">Search</a><a class="page-link" href="/Better-Stats-Than-Never/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tutorial 05: Frequency Distribution</h1><p class="page-description">First part of Charts and Graphs</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-31T00:00:00-06:00" itemprop="datePublished">
+        Dec 31, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      10 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Better-Stats-Than-Never/categories/#basic-stats">basic-stats</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/Slothfulwave612/Better-Stats-Than-Never/tree/master/_notebooks/2020-12-31-Frequency-Distribution.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Better-Stats-Than-Never/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/Slothfulwave612/Better-Stats-Than-Never/master?filepath=_notebooks%2F2020-12-31-Frequency-Distribution.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Better-Stats-Than-Never/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/Slothfulwave612/Better-Stats-Than-Never/blob/master/_notebooks/2020-12-31-Frequency-Distribution.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Better-Stats-Than-Never/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#What-is-Frequency-Distribution">What is Frequency Distribution </a></li>
+<li class="toc-entry toc-h1"><a href="#Construction">Construction </a></li>
+<li class="toc-entry toc-h1"><a href="#Class-Midpoint">Class Midpoint </a></li>
+<li class="toc-entry toc-h1"><a href="#Relative-Frequency">Relative Frequency </a></li>
+<li class="toc-entry toc-h1"><a href="#Cumulative-Frequency">Cumulative Frequency </a></li>
+<li class="toc-entry toc-h1"><a href="#Questionnaire">Questionnaire </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-12-31-Frequency-Distribution.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## required packages/modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="What-is-Frequency-Distribution">
+<a class="anchor" href="#What-is-Frequency-Distribution" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Frequency Distribution<a class="anchor-link" href="#What-is-Frequency-Distribution"> </a>
+</h1>
+<ul>
+<li>
+<p>A <strong>frequency distribution</strong> is an overview of all distinct values in the data set and the number of times they occur.</p>
+</li>
+<li>
+<p>It is a tool for grouping data.</p>
+</li>
+<li>
+<p>In a frequency distribution the data is presented in the form of <strong>class interval</strong> and <strong>frequencies</strong>.</p>
+</li>
+<li>
+<p>We define <strong>frequency</strong> in statistics as the number of times the observation occurred/recorded in an experiment or study.</p>
+<ul>
+<li>For example, if we record test scores of a class and recorded marks of 50 students, then our frequency will be 50.</li>
+</ul>
+</li>
+<li>
+<p>The range of each group of data is called <strong>class interval</strong>.</p>
+<ul>
+<li>
+<p>For example, we record the test scores of a class. The marks are between 0 and 100. We put these marks into groups.</p>
+</li>
+<li>
+<p>A class interval of 20 marks has these groups</p>
+<ul>
+<li>
+<p>0 to just below 20</p>
+</li>
+<li>
+<p>20 to just below 40</p>
+</li>
+<li>
+<p>40 to just below 60</p>
+</li>
+<li>
+<p>60 to just below 80</p>
+</li>
+<li>
+<p>80 to 100</p>
+</li>
+</ul>
+</li>
+<li>
+<p>But a class interval of 50 marks has these groups</p>
+<ul>
+<li>
+<p>0 to just below 50</p>
+</li>
+<li>
+<p>50 to 100</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Construction">
+<a class="anchor" href="#Construction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Construction<a class="anchor-link" href="#Construction"> </a>
+</h1>
+<ul>
+<li>Let's say we record the test scores of a class and have the following result:</li>
+</ul>
+
+<pre><code>test_scores = [52, 92, 84, 74, 65, 55, 78, 95, 62, 72, 64, 
+               74, 82, 94, 71, 79, 73, 94, 77, 53, 
+               77, 87, 97, 57, 72, 89, 76, 91, 86, 
+               99, 71, 73, 58, 76, 33, 78, 69]</code></pre>
+<ul>
+<li>
+<p>When constructing a frequency distribution, we <strong>first</strong> determine the range of the data.</p>
+<ul>
+<li>
+<p>We define the <strong>range</strong> as the difference between the largest and smallest numbers in the data set.</p>
+</li>
+<li>
+<p>So, in our data set, the range is $99-33=66$.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The <strong>second step</strong> in to determine how many classes it will contain.</p>
+<ul>
+<li>
+<p>Too many classes or too few classes might not reveal the basic shape of the data set. Also, it will be difficult to interpret such frequency distribution.</p>
+</li>
+<li>
+<p>The ideal number of classes may be determined or estimated by formula:</p>
+<ul>
+<li>
+<p><em>number of classes (C)</em> = $1 + (3.3 * log_{10}n)$, or</p>
+</li>
+<li>
+<p><em>number of classes (C)</em> = $\sqrt{n}$,  where n is the total number of observation in the data.</p>
+</li>
+<li>
+<p>However, these formulas are not a hard rule and the resulting number of classes determined by formula may not always be exactly suitable with the data being dealt with.</p>
+</li>
+<li>
+<p>Also, one rule of thumb is to select between <em>5</em> and <em>15 classes</em>.</p>
+</li>
+<li>
+<p>For our data set, using the above formula, we have the resulting number of classes equal to 6. (n=37, for our data set)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>After selecting the number of classes, we determine the <strong>width</strong> of the class interval.</p>
+<ul>
+<li>
+<p>We calculate the class-width by dividing the range by the number of classes.</p>
+</li>
+<li>
+<p>$width(h) = \frac{range}{number of classes}$</p>
+</li>
+<li>
+<p>For the data, the approximation would be 66/6=11.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The frequency distribution must start at a value equal to or lower than the lowest number of the ungrouped data and end at a value equal to or higher than the highest number.</p>
+<ul>
+<li>The lowest test score is 33, and the highest is 99. So, our frequency distribution will start at 33 and ends at 99.</li>
+</ul>
+</li>
+<li>
+<p>At the end, the frequency distribution will look like this:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Class Interval</th>
+<th style="text-align:right">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">33 - under 44</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left">44 - under 55</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td style="text-align:left">55 - under 66</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td style="text-align:left">66 - under 77</td>
+<td style="text-align:right">11</td>
+</tr>
+<tr>
+<td style="text-align:left">77 - under 88</td>
+<td style="text-align:right">9</td>
+</tr>
+<tr>
+<td style="text-align:left">88 - under 99</td>
+<td style="text-align:right">8</td>
+</tr>
+<tr>
+<td style="text-align:left">Total</td>
+<td style="text-align:right">37</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The above table is one way of making frequency distribution for the given data, if you pick different range/width/number_of_classes, the table will look differently.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Class-Midpoint">
+<a class="anchor" href="#Class-Midpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class Midpoint<a class="anchor-link" href="#Class-Midpoint"> </a>
+</h1>
+<ul>
+<li>
+<p>The midpoint of each class interval is called the <strong>class midpoint</strong> and is sometimes referred to as the <strong>class marks</strong>.</p>
+</li>
+<li>
+<p>It can be calculated as the average of the two-class endpoints.</p>
+</li>
+<li>
+<p>For example, in the above distribution, the midpoint of the class interval 33 - under 44 is $(33+44)/2 = 38.5$</p>
+</li>
+<li>
+<p>If we include class midpoint in the above table, the final table will look like this:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Class Interval</th>
+<th style="text-align:right">Frequency</th>
+<th style="text-align:right">Class Midpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">33 - under 44</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">38.5</td>
+</tr>
+<tr>
+<td style="text-align:left">44 - under 55</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">49.5</td>
+</tr>
+<tr>
+<td style="text-align:left">55 - under 66</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">60.5</td>
+</tr>
+<tr>
+<td style="text-align:left">66 - under 77</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">71.5</td>
+</tr>
+<tr>
+<td style="text-align:left">77 - under 88</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">82.5</td>
+</tr>
+<tr>
+<td style="text-align:left">88 - under 99</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">93.5</td>
+</tr>
+<tr>
+<td style="text-align:left">Total</td>
+<td style="text-align:right">37</td>
+<td style="text-align:right">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>If we take any two consecutive class midpoints subtract them and take absolute value we get the range for our distribution.</p>
+<ul>
+<li>e.g, $|71.5 - 60.5| = 11$ or $|49.5 - 60.5| = 11$, which is our range value.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Relative-Frequency">
+<a class="anchor" href="#Relative-Frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Relative Frequency<a class="anchor-link" href="#Relative-Frequency"> </a>
+</h1>
+<ul>
+<li>
+<p><strong>Relative frequency</strong> is the proportion of the total frequency that is in any given class interval in a frequency distribution.</p>
+</li>
+<li>
+<p>Relative frequency is the <em>individual class frequency</em> divided by the <em>total frequency</em>.</p>
+</li>
+<li>
+<p>For example, the relative class frequency of class <em>66 - under 77</em> is $11 / 37 = 0.297$
+</p>
+<div class="flash flash-warn">
+    <svg class="octicon octicon-zap octicon octicon-zap" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10.561 1.5a.016.016 0 00-.01.004L3.286 8.571A.25.25 0 003.462 9H6.75a.75.75 0 01.694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0012.538 7H9.25a.75.75 0 01-.683-1.06l2.008-4.418.003-.006a.02.02 0 00-.004-.009.02.02 0 00-.006-.006L10.56 1.5zM9.504.43a1.516 1.516 0 012.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 01-.871.354h-.302a1.25 1.25 0 01-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429z"></path></svg>
+    <strong>Important: </strong>If we select values randomly from the above frequency distribution, the probability of drawing a number that is “66 – under 77” would be .297, the relative frequency for that class interval.
+</div>
+</li>
+<li>If we include relative frequency in our frequency distribution, the table will look like this:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Class Interval</th>
+<th style="text-align:right">Frequency</th>
+<th style="text-align:right">Class Midpoint</th>
+<th style="text-align:right">Relative Frequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">33 - under 44</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">38.5</td>
+<td style="text-align:right">0.02702</td>
+</tr>
+<tr>
+<td style="text-align:left">44 - under 55</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">49.5</td>
+<td style="text-align:right">0.05405</td>
+</tr>
+<tr>
+<td style="text-align:left">55 - under 66</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">60.5</td>
+<td style="text-align:right">0.16216</td>
+</tr>
+<tr>
+<td style="text-align:left">66 - under 77</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">71.5</td>
+<td style="text-align:right">0.29729</td>
+</tr>
+<tr>
+<td style="text-align:left">77 - under 88</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">82.5</td>
+<td style="text-align:right">0.24324</td>
+</tr>
+<tr>
+<td style="text-align:left">88 - under 99</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">93.5</td>
+<td style="text-align:right">0.21621</td>
+</tr>
+<tr>
+<td style="text-align:left">Total</td>
+<td style="text-align:right">37</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">-</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Cumulative-Frequency">
+<a class="anchor" href="#Cumulative-Frequency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cumulative Frequency<a class="anchor-link" href="#Cumulative-Frequency"> </a>
+</h1>
+<ul>
+<li>
+<p>The <strong>cumulative frequency</strong> is a running total of frequencies through the classes of a frequency distribution.</p>
+</li>
+<li>
+<p>The cumulative frequency for each class interval is the frequency of that class interval added to the preceding cumulative total.</p>
+</li>
+<li>
+<p>The cumulative frequency for the first class is the same as the class frequency: 1. The cumulative frequency for the second class interval is the frequency of that interval (2) plus the frequency of the first interval
+(1), which yields a new cumulative frequency of 3.</p>
+</li>
+<li>
+<p>This process continues through the last interval, at which point the cumulative total equals the sum of the frequencies (37).</p>
+</li>
+<li>
+<p>After adding the cumulative frequency column to our frequency distribution, the table will look like this:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Class Interval</th>
+<th style="text-align:right">Frequency</th>
+<th style="text-align:right">Class Midpoint</th>
+<th style="text-align:right">Relative Frequence</th>
+<th style="text-align:right">Cumulative Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">33 - under 44</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">38.5</td>
+<td style="text-align:right">0.02702</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left">44 - under 55</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">49.5</td>
+<td style="text-align:right">0.05405</td>
+<td style="text-align:right">3</td>
+</tr>
+<tr>
+<td style="text-align:left">55 - under 66</td>
+<td style="text-align:right">6</td>
+<td style="text-align:right">60.5</td>
+<td style="text-align:right">0.16216</td>
+<td style="text-align:right">9</td>
+</tr>
+<tr>
+<td style="text-align:left">66 - under 77</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">71.5</td>
+<td style="text-align:right">0.29729</td>
+<td style="text-align:right">20</td>
+</tr>
+<tr>
+<td style="text-align:left">77 - under 88</td>
+<td style="text-align:right">9</td>
+<td style="text-align:right">82.5</td>
+<td style="text-align:right">0.24324</td>
+<td style="text-align:right">29</td>
+</tr>
+<tr>
+<td style="text-align:left">88 - under 99</td>
+<td style="text-align:right">8</td>
+<td style="text-align:right">93.5</td>
+<td style="text-align:right">0.21621</td>
+<td style="text-align:right">37</td>
+</tr>
+<tr>
+<td style="text-align:left">Total</td>
+<td style="text-align:right">37</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">-</td>
+<td style="text-align:right">-</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## frequency distribution using Python</span>
+
+<span class="k">def</span> <span class="nf">make_frequency_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">user_input</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Function to make frequency distribution.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        data (numpy.array): data containing records.</span>
+<span class="sd">        user_input (tuple, optional): </span>
+<span class="sd">                    user_input for start_value, end_value, total_classes.</span>
+<span class="sd">                    Defaults to None.</span>
+<span class="sd">        extra (bool, optional): to make extra columns like cumulative, relative frequency.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        pandas.DataFrame: required frequency distribution.</span>
+<span class="sd">    """</span>
+    <span class="c1">## total number of observations</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="c1">## lowest and highest number in the data</span>
+    <span class="n">lowest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+    <span class="c1">## total number of class </span>
+    <span class="k">if</span> <span class="n">user_input</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>    
+        <span class="n">total_classes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lowest</span><span class="p">,</span> <span class="n">highest</span><span class="p">,</span> <span class="n">total_classes</span> <span class="o">=</span> <span class="n">user_input</span>
+
+    <span class="c1">## range of the data</span>
+    <span class="n">range_</span> <span class="o">=</span> <span class="n">highest</span> <span class="o">-</span> <span class="n">lowest</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Start value: </span><span class="si">{</span><span class="n">lowest</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"End value: </span><span class="si">{</span><span class="n">highest</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Range: </span><span class="si">{</span><span class="n">range_</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total Number of Classes: </span><span class="si">{</span><span class="n">total_classes</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="c1">## calculate width</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">range_</span> <span class="o">/</span> <span class="n">total_classes</span>
+    
+    <span class="c1">## list of all class intervals</span>
+    <span class="n">class_intervals</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">start</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lowest</span><span class="p">,</span> <span class="n">highest</span><span class="p">,</span> <span class="n">total_classes</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Class Width = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="c1">## calculate frequency for each class</span>
+    <span class="n">hist</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">class_intervals</span><span class="p">)</span>
+    
+    <span class="c1">## frequency table</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">"Class Intervals"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2"> - under </span><span class="si">{</span><span class="n">second</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">second</span> <span class="o">!=</span> <span class="n">highest</span> \
+                <span class="k">else</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2"> -  </span><span class="si">{</span><span class="n">second</span><span class="si">}</span><span class="s2">"</span> \
+                <span class="k">for</span> <span class="n">first</span><span class="p">,</span> <span class="n">second</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">class_intervals</span><span class="p">,</span> <span class="n">class_intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="p">],</span>
+            <span class="s2">"Frequency"</span><span class="p">:</span> <span class="n">hist</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">extra</span><span class="p">:</span>
+        <span class="c1">## class midpoint</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"Class Midpoint"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Class Intervals"</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">(</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="c1">## relative frequency</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"Relative Frequency"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Frequency"</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Frequency"</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+        <span class="c1">## cumulative frequency</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">"Cumulative Frequency"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"Frequency"</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1">## data</span>
+<span class="n">test_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="mi">52</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> 
+    <span class="mi">72</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> 
+    <span class="mi">77</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> 
+    <span class="mi">91</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">71</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">69</span>
+<span class="p">])</span>
+
+<span class="c1">## without specifying user input</span>
+<span class="n">make_frequency_distribution</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Start value: 33
+End value: 99
+Range: 66
+Total Number of Classes: 6
+Class Width = 11.0
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class Intervals</th>
+      <th>Frequency</th>
+      <th>Class Midpoint</th>
+      <th>Relative Frequency</th>
+      <th>Cumulative Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>33.0 - under 44.0</td>
+      <td>1</td>
+      <td>38.5</td>
+      <td>0.027027</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>44.0 - under 55.0</td>
+      <td>2</td>
+      <td>49.5</td>
+      <td>0.054054</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>55.0 - under 66.0</td>
+      <td>6</td>
+      <td>60.5</td>
+      <td>0.162162</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>66.0 - under 77.0</td>
+      <td>11</td>
+      <td>71.5</td>
+      <td>0.297297</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>77.0 - under 88.0</td>
+      <td>9</td>
+      <td>82.5</td>
+      <td>0.243243</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>88.0 -  99.0</td>
+      <td>8</td>
+      <td>93.5</td>
+      <td>0.216216</td>
+      <td>37</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## with specifying user input (a different frequency diistribution for the same data)</span>
+<span class="n">start_value</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">end_value</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">total_classes</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="c1">## make a tuple</span>
+<span class="n">user_input</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">start_value</span><span class="p">,</span> <span class="n">end_value</span><span class="p">,</span> <span class="n">total_classes</span>
+<span class="p">)</span>
+
+<span class="c1">## make the distribution</span>
+<span class="n">make_frequency_distribution</span><span class="p">(</span><span class="n">test_scores</span><span class="p">,</span> <span class="n">user_input</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Start value: 30
+End value: 100
+Range: 70
+Total Number of Classes: 7
+Class Width = 10.0
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Class Intervals</th>
+      <th>Frequency</th>
+      <th>Class Midpoint</th>
+      <th>Relative Frequency</th>
+      <th>Cumulative Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>30.0 - under 40.0</td>
+      <td>1</td>
+      <td>35.0</td>
+      <td>0.027027</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>40.0 - under 50.0</td>
+      <td>0</td>
+      <td>45.0</td>
+      <td>0.000000</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>50.0 - under 60.0</td>
+      <td>5</td>
+      <td>55.0</td>
+      <td>0.135135</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>60.0 - under 70.0</td>
+      <td>4</td>
+      <td>65.0</td>
+      <td>0.108108</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>70.0 - under 80.0</td>
+      <td>15</td>
+      <td>75.0</td>
+      <td>0.405405</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>80.0 - under 90.0</td>
+      <td>5</td>
+      <td>85.0</td>
+      <td>0.135135</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>90.0 -  100.0</td>
+      <td>7</td>
+      <td>95.0</td>
+      <td>0.189189</td>
+      <td>37</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Questionnaire">
+<a class="anchor" href="#Questionnaire" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questionnaire<a class="anchor-link" href="#Questionnaire"> </a>
+</h1>
+<p><strong>Ques 01:</strong> The following data are the average weekly mortgage interest rates
+for a 40-week period.</p>
+<p>   7.29    6.69    6.90    7.03    7.28    7.17    7.40    6.97</p>
+<p>   7.23    6.77    7.16    6.90    7.31    6.78    6.35    6.96</p>
+<p>   7.11    6.57    7.30    7.16    6.87    7.08    6.96    7.02</p>
+<p>   6.78    6.80    7.24    7.40    7.68    7.12    7.29    7.13</p>
+<p>   7.47    6.88    7.16    7.05    7.03    7.31    7.16    6.84</p>
+<p>Construct a frequency distribution for these data. Calculate and display the
+class midpoints, relative frequencies, and cumulative frequencies for this frequency
+distribution.</p>
+<p><strong>Ques 02:</strong> The following data represent the afternoon high temperatures for 50 construction
+days during a year in St. Louis.</p>
+<p>  42  55  16  38  31   70  85  40  79  38</p>
+<p>  64  10  81  35  52   47  24  15  36  16</p>
+<p>  66  45  35  23  81   69  31  17  64  12</p>
+<p>  73  62  40  75  61   38  47  36  53  43</p>
+<p>  48  63  44  31  30   25  84  17  60  33</p>
+<p>  2.1. Construct a frequency distribution for the data using five class intervals.</p>
+<p>  2.2. Construct a frequency distribution for the data using 10 class intervals.</p>
+<p>  2.3. Examine the results of (2.1) and (2.2) and comment on the usefulness of the frequency distribution in terms of temperature summarizationcapability.</p>
+<p><strong>Ques 03:</strong> A packaging process is supposed to fill small boxes of raisins with approximately 50 raisins so that each box will weigh the same. However, the number of raisins in each box will vary. Suppose 100 boxes of raisins are randomly sampled, the raisins counted, and the following data are obtained.</p>
+<p>  57  44  49  49  51  54  55  46  59  47  51  53</p>
+<p>  49  52  48  46  53  59  53  52  53  45  44  49</p>
+<p>  55  51  50  57  45  48  52  57  54  54  53  48</p>
+<p>  47  47  45  50  50  39  46  57  55  53  57  61</p>
+<p>  56  45  60  53  52  52  47  56  49  60  40  56</p>
+<p>  51  58  55  52  53  48  43  49  46  47  51  47</p>
+<p>  54  53  43  47  58  53  49  47  52  51  47  49</p>
+<p>  48  49  52  41  50  48  52  48  53  47  46  57</p>
+<p>  44  48  57  46</p>
+<p>Construct a frequency distribution for these data. What does the frequency
+distribution reveal about the box fills?</p>
+<p><strong>Ques 04:</strong> The owner of a fast-food restaurant ascertains the ages of a sample of customers. From these data, the owner constructs the frequency distribution shown.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Class Interval</th>
+<th style="text-align:right">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0 - under 5</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td style="text-align:left">5 - under 10</td>
+<td style="text-align:right">8</td>
+</tr>
+<tr>
+<td style="text-align:left">10 - under 15</td>
+<td style="text-align:right">17</td>
+</tr>
+<tr>
+<td style="text-align:left">15 - under 20</td>
+<td style="text-align:right">23</td>
+</tr>
+<tr>
+<td style="text-align:left">20 - under 25</td>
+<td style="text-align:right">18</td>
+</tr>
+<tr>
+<td style="text-align:left">25 - under 30</td>
+<td style="text-align:right">10</td>
+</tr>
+<tr>
+<td style="text-align:left">30 - under 35</td>
+<td style="text-align:right">4</td>
+</tr>
+</tbody>
+</table>
+<p>For each class interval of the frequency distribution, determine the the relative frequency, and what does the relative frequency tell the fast-food restaurant owner about customer ages?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="footnotes"><p id="fn-1">1. <a href="https://slothfulwave612.github.io/Better-Stats-Than-Never/solutions/2020/12/23/Exercise-Solutions.html#Tutorial-05:-Frequency-Distribution">Solutions</a><a href="#fnref-1" class="footnote footnotes">↩</a></p></div>
+<div class="footnotes"><p id="fn-2">2. Notes are compiled from <a href="https://en.wikipedia.org/wiki/Frequency_distribution">Wikipedia</a> and <a href="https://books.google.co.in/books?id=KQ25WExx5usC&amp;source=gbs_book_similarbooks">Business Statistics by Ken Black</a><a href="#fnref-2" class="footnote footnotes">↩</a></p></div>
+<div class="footnotes"><p id="fn-3">3. If you face any problem or have any feedback/suggestions feel free to comment.<a href="#fnref-3" class="footnote footnotes">↩</a></p></div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="Slothfulwave612/Better-Stats-Than-Never"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Better-Stats-Than-Never/basic-stats/2020/12/31/Frequency-Distribution.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Better-Stats-Than-Never/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Better-Stats-Than-Never/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Better-Stats-Than-Never/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An intuitive and easy way for getting started in statistics.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/slothfulwave612" title="slothfulwave612"><svg class="svg-icon grey"><use xlink:href="/Better-Stats-Than-Never/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/slothfulwave612" title="slothfulwave612"><svg class="svg-icon grey"><use xlink:href="/Better-Stats-Than-Never/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
