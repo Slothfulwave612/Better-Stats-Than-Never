@@ -53,8 +53,7 @@ def make_frequency_distribution(data, user_input=None, extra=True):
     df = pd.DataFrame(
         {
             "Class Intervals": [
-                f"{first} - under {second}" if second != highest \
-                else f"{first} -  {second}" \
+                f"{first} - under {second}"\
                 for first, second in zip(class_intervals, class_intervals[1:])
             ],
             "Frequency": hist
